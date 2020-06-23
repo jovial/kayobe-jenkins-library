@@ -14,6 +14,8 @@ def call(Closure body) {
             stage('build') {
                 steps {
                     script {
+                        // needs to be in script body otherwise you get: Method calls on objects not allowed outside
+                        // "script" blocks.
                         body()
                     }
                 }
