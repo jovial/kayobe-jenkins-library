@@ -9,7 +9,7 @@
  */
 def call(body) {
     pipeline {
-        agent { any }
+        agent any
         stages {
             stage('build') {
                 steps {
