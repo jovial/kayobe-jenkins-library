@@ -7,7 +7,7 @@
  * }
  *
  */
-def call(body) {
+def call(Closure body) {
     pipeline {
         agent any
         stages {
