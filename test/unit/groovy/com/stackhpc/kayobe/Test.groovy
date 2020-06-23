@@ -7,16 +7,25 @@ import testSupport.PipelineSpockTestBase
  */
 class helloMessageTestSpec extends PipelineSpockTestBase {
 
-    def "test shared library code"() {
+    def echo = {
+        println("echoing: ${it}")
+    }
+
+    def sh = {
+        println("running: ${it}")
+    }
+
+    def "test kayobe run"() {
 
         given:
-        def helloMessageBody = {
-            message = 'This is a test message'
+        def steps = {
+            echo "hello"
+            sh "goodbye"
         }
 
         when:
-        def script = loadScript('vars/helloMessage.groovy')
-        script.call(helloMessageBody)
+        def script = loadScript('vars/kayobeRun.groovy')
+        script.call(steps)
 
         then:
         printCallStack()
