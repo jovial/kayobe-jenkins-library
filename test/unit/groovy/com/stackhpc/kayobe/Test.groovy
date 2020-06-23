@@ -5,7 +5,7 @@ import testSupport.PipelineSpockTestBase
 /**
  * How to unit test some vars DSL like shared code
  */
-class helloMessageTestSpec extends PipelineSpockTestBase {
+class KayobeTestSpec extends PipelineSpockTestBase {
 
     def echo = {
         println("echoing: ${it}")
