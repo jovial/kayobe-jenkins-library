@@ -13,7 +13,7 @@ def call(Closure body) {
         stages {
             stage('build') {
                 steps {
-                    body()
+                    body
                 }
             }
         }
