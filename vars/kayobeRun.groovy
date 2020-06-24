@@ -11,6 +11,7 @@
 import org.yaml.snakeyaml.Yaml
 
 def call(Closure body) {
+    Yaml yaml = new Yaml();
     def file = new File('/tmp/test.yml')
     def config = yaml.load(file.text)
     println(config)
