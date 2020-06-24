@@ -7,7 +7,13 @@
  * }
  *
  */
+@Grab(group='org.yaml', module='snakeyaml', version='1.5')
+import org.yaml.snakeyaml.Yaml
+
 def call(Closure body) {
+    def file = new File('/tmp/test.yml')
+    def config = yaml.load(file.text)
+    println(config)
     pipeline {
         agent any
         stages {
